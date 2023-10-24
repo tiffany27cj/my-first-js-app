@@ -1,4 +1,4 @@
-let pokemonList = []
+let pokemonList = [{ pokemon1 }, { pokemon2 }, { pokemon3 }, { pokemon4 }, { pokemon5 }]
 let pokemon1 = {
     name: "Golduck",
     height: 1.7,
@@ -20,7 +20,16 @@ let pokemon4 = {
     types: ['flying']
 };
 let pokemon5 = {
-    name: 0.8,
-    types: ['poison']
+    name: "Caterpie",
+    height: 1,
+    types: ['bug']
 };
 
+for (let i = 0; i <= pokemonList.length; i++) {
+    if (height >= 1) {
+        document.write(pokemonList.name[i] + " \(" + "height: " + pokemonList.height[i] + "\)" + " -" + "Wow, that\'s big!");
+    }
+    else {
+        document.write(pokemonList.name[i] + " \(" + "height: " + pokemonList.height[i] + "\)");
+    }
+}
