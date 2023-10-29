@@ -1,4 +1,3 @@
-
 let pokemonRepository = (function () {
     let pokemonList = [
         {
@@ -27,23 +26,23 @@ let pokemonRepository = (function () {
             types: ['bug']
         }
     ];
+
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
+
+    function getAll() {
+        return pokemonList;
+    }
+
+    return {
+        add: add,
+        getAll: getAll
+    }
 })();
 
-function add(pokemon) {
-    pokemonList.push(pokemon);
-}
-
-function getAll() {
-    return pokemonList;
-}
-
-return {
-    add: add,
-    getAll: getAll
-}();
-
 console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Pikachu' });
+pokemonRepository.add({ name: 'Pikachu', height: 1, types: ['electric'] });
 console.log(pokemonRepository.getAll());
 
 
