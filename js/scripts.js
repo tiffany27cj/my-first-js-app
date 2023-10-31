@@ -1,48 +1,51 @@
-let pokemonRepository = (function () {
-    let pokemonList = [
-        {
-            name: "Golduck",
-            height: 1.7,
-            types: ['water']
-        },
-        {
-            name: "Gloom",
-            height: 0.8,
-            types: ['grass', 'poison']
-        },
-        {
-            name: "Beedrill",
-            height: 1,
-            types: ['bug']
-        },
-        {
-            name: "Spearow",
-            height: 0.3,
-            types: ['flying']
-        },
-        {
-            name: "Caterpie",
-            height: 1,
-            types: ['bug']
-        }
-    ];
-
-    function add(pokemon) {
-        pokemonList.push(pokemon);
+// let pokemonRepository = (function () {
+let pokemonList = [
+    {
+        name: "Golduck",
+        height: 1.7,
+        types: ['water']
+    },
+    {
+        name: "Gloom",
+        height: 0.8,
+        types: ['grass', 'poison']
+    },
+    {
+        name: "Beedrill",
+        height: 1,
+        types: ['bug']
+    },
+    {
+        name: "Spearow",
+        height: 0.3,
+        types: ['flying']
+    },
+    {
+        name: "Caterpie",
+        height: 1,
+        types: ['bug']
     }
+];
 
-    function getAll() {
-        return pokemonList;
-    }
+function add(pokemon) {
+    pokemonList.push(pokemon);
+}
 
-    return {
-        add: add,
-        getAll: getAll
-    }
-})();
+function getAll() {
+    return pokemonList;
+}
 
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Pikachu', height: 1, types: ['electric'] });
-console.log(pokemonRepository.getAll());
+// return {
+//   add: add,
+//  getAll: getAll
+// }
+// }) ();
+
+// console.log(pokemonRepository.getAll());
+// pokemonRepository.add({ name: 'Pikachu', height: 1, types: ['electric'] });
+// console.log(pokemonRepository.getAll());
 
 
+pokemonList.forEach(function (element) {
+    console.log(element);
+})
