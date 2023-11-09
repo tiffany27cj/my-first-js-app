@@ -46,7 +46,7 @@ let pokemonRepository = (function () {
             });
         }).catch(function (e) {
             console.error(e);
-        })
+        });
     }
 
     function loadDetails(item) {
@@ -69,7 +69,7 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails
-    }
+    };
 
 })();
 
