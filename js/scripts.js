@@ -3,6 +3,12 @@ let pokemonRepository = (function () {
     let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
     let modalContainer = document.querySelector(".modal-container");
+    let container = document.querySelector('#image-container');
+
+    // Create an <img> element
+    let myImage = document.createElement('img');
+    myImage.src = '#';
+    container.appendChild(myImage);
 
     function showModal(pokemon) {
         console.log(pokemon)
@@ -20,12 +26,14 @@ let pokemonRepository = (function () {
         }
     }
 
+    // Hide modal when user presses the Escape key
     window.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
             hideModal();
         }
     });
 
+    // Hide modal whe user clicks outside the box
     modalContainer.addEventListener("click", (e) => {
         let target = e.target;
         if (target === modalContainer) {
@@ -100,6 +108,8 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,
+        showModal: showModal,
+        hideModal: hideModal
     };
 })();
 
