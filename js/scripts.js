@@ -11,19 +11,41 @@ let pokemonRepository = (function () {
     container.appendChild(myImage);
 
     function showModal(pokemon) {
-        console.log(pokemon)
+        let modalContainer = document.querySelector('#modal-container');
+
+        // Clear all existing modal content
+        modalContainer.innerHTML = '';
+
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // Add the new modal content
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = pokemon.name;
+
+        let pokemonImage = document.createElement('img');
+        pokemonImage.src = pokemon.imageUrl;
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = 'Height: ' + pokemon.height;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(pokemonImage);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+
+        modalContainer.classList.add('is-visible');
     }
 
-    let dialogPromiseReject;
-
     function hideModal() {
-        let modal = document.querySelector(".modal");
-        modal.remove();
-
-        if (dialogPromiseReject) {
-            dialogPromiseReject();
-            dialogPromiseReject = null;
-        }
+        let modalContainer = document.querySelector('#modal-container');
+        modalContainer.classList.remove('is-visible');
     }
 
     // Hide modal when user presses the Escape key
@@ -107,9 +129,7 @@ let pokemonRepository = (function () {
         add,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails,
-        showModal: showModal,
-        hideModal: hideModal
+        loadDetails: loadDetails
     };
 })();
 
