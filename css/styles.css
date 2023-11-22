@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: rgb(89, 33, 33);
+  color: black;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -26,7 +26,7 @@ h1 {
 }
 /* button-class styling */
 .button-class {
-  background-color: darkslategrey;
+  background-color: rgb(183, 105, 105);
   color: #000;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -44,8 +44,8 @@ h1 {
 
 .button-class:active,
 .button-class:active {
-  background-color: #fff;
-  border: 5px solid #FBCA3C;
+  background-color: rgb(94, 44, 44);
+  border: 5px solid rgb(43, 40, 40);
   color: #000;
 }
 
