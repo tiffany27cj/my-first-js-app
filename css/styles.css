@@ -26,7 +26,7 @@ h1 {
 }
 /* button-class styling */
 .button-class {
-  background-color: #FBCA3C;
+  background-color: darkslategrey;
   color: #000;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -51,7 +51,7 @@ h1 {
 
 /* Modal styling */
 .modal {
-  color: #000;
+  color: lightseagreen;
 }
 .modal-dialog {
   margin-top: 15%;
